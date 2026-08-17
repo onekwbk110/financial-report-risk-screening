@@ -13,6 +13,15 @@ The skill does not try to predict stock prices. It helps an agent answer a more 
 Can this company's financial statements be trusted enough to continue researching it?
 ```
 
+## Preview
+
+Example HTML report output: overall score, hard-gate alerts, and the 15-domain scorecard.
+
+示例输出：综合评分、硬闸门提示与 15 维评分卡。
+
+![Report preview](docs/preview-v1.0.png)
+
+
 ## Table Of Contents
 
 - [What This Skill Is](#what-this-skill-is)
