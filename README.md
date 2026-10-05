@@ -15,9 +15,9 @@ Can this company's financial statements be trusted enough to continue researchin
 
 ## Preview
 
-Example HTML report output: overall score, hard-gate alerts, and the 15-domain scorecard.
+Example HTML report output uses the **v1.0 dashboard** chrome: four conclusion cards, yellow risk banner, and the 15-domain blue score table. Agents must clone this layout (`references/html-v1.0-layout.md`), not a cream/magazine theme.
 
-示例输出：综合评分、硬闸门提示与 15 维评分卡。
+示例输出：v1.0 蓝白仪表盘（核心结论四宫格 + 15 维蓝表头评分卡）。
 
 ![Report preview](docs/preview-v1.0.png)
 
@@ -427,6 +427,8 @@ financial-report-risk-screening/
     accounting-policy-change-protocol.md
     deterministic-red-flag-rules.md
     html-export-standards.md
+    html-v1.0-layout.md
+    html-v1.0-example.html
     long-form-report-standard.md
     market-adapters.md
     pdf-export-standards.md
@@ -451,6 +453,7 @@ financial-report-risk-screening/
 | `references/report-template.md` | Standard report sections and writing structure |
 | `references/long-form-report-standard.md` | Long-form report depth and account-level decomposition standard |
 | `references/html-export-standards.md` | Standalone HTML layout, visual, and QA requirements |
+| `references/html-v1.0-layout.md` | v1.0 蓝白仪表盘 tokens, first-viewport contract, CSS skeleton |
 | `references/pdf-export-standards.md` | Optional PDF rendering and visual inspection standards |
 
 ## Output Expectations

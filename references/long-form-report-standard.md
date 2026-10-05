@@ -81,16 +81,16 @@ Every important issue must pass four tests:
 
 ## 4. Visual/HTML Standard
 
-The HTML should be a formal research-style long-form report, with a first viewport that clearly communicates score, rating, hard red-light state, highest-priority issues, and the core conclusion.
+The HTML must use the **v1.0 蓝白仪表盘** chrome in `references/html-v1.0-layout.md`, matching `docs/preview-v1.0.png`. After that chrome, keep a long-form research report (risk map, three-statement synthesis, account cards, appendix). Do not ship cream/serif magazine pages.
 
-Required front matter:
+Required front matter / first viewport:
 
-- Cover title and company code.
+- Cover title and company code in the top bar.
 - Author/organization when provided by the user.
 - Report status: `内部研究草稿`, `internal research draft`, or user-specified status.
-- Approximate word count and estimated reading time.
-- KPI cards for score, source basis, hard red lights, highest risk.
-- A concise executive callout.
+- Four cards: 综合评分, 评级含义, 硬闸门触发, 结论建议.
+- Yellow 关键风险摘要 banner.
+- 15-domain score table with blue header and A–E pills.
 
 Required visuals/tables:
 

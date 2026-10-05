@@ -13,7 +13,7 @@ Output folder rule: write artifacts into a project-local or user-specified folde
 
 Ownership rule: add author/organization marks only if the user provides them. Otherwise use a neutral footer with report date, source basis, and the limitation statement.
 
-Long-form report-standard rule: the final HTML/Markdown must be a polished long-form report, not a short dashboard-only memo. Use `references/long-form-report-standard.md` and `references/html-export-standards.md` before writing and exporting. If a generated report is only a few scorecards, KPI cards, or brief issue bullets, it is incomplete for this workflow. Account-level decomposition is a middle evidence layer, not a replacement for global analysis: keep the full narrative spine, then drill down into accounts.
+Long-form report-standard rule: the final HTML/Markdown must be a polished long-form report, not a short dashboard-only memo. Use `references/long-form-report-standard.md`, `references/html-export-standards.md`, and `references/html-v1.0-layout.md` before writing and exporting. HTML chrome must match the v1.0 蓝白仪表盘 (`docs/preview-v1.0.png` and `docs/examples/北方导航_600435_财报排雷报告.html`): 核心结论四宫格、黄色风险摘要、15 维蓝表头评分卡. Do not use warm-paper / magazine / e-ink styling. If a generated report is only a few scorecards, KPI cards, or brief issue bullets, it is incomplete for this workflow. Account-level decomposition is a middle evidence layer, not a replacement for global analysis: keep the full narrative spine, then drill down into accounts.
 
 ## Core Principle
 
@@ -98,9 +98,9 @@ Use these book-derived lenses together:
 11. **Export final deliverables**
    - Produce a polished standalone HTML final report by default.
    - Preserve a Markdown source report and any structured data/validation notes next to the HTML.
-   - Use `references/html-export-standards.md` for native reader-facing layout; treat HTML as the primary report surface generated from the evidence pack and analysis structure, not as a decorative conversion from an existing Word/PDF report.
+   - Use `references/html-export-standards.md` and `references/html-v1.0-layout.md` for native reader-facing layout. Clone CSS from `docs/examples/北方导航_600435_财报排雷报告.html` or `references/html-v1.0-example.html`. Treat HTML as the primary report surface generated from the evidence pack, not as a decorative conversion from Word/PDF, and not as a cream/serif magazine page.
    - Generate a PDF only when the user explicitly asks for a print/archive copy or when a downstream publication package requires it; use `references/pdf-export-standards.md` for that optional export.
-   - The HTML should normally be a formal long-form report with conclusion-first navigation, KPI cards, issue cards, scoring explanation, source appendix, and print-friendly CSS. A dashboard-only HTML output fails the standard unless the user explicitly asks for a brief.
+   - The HTML should normally be a v1.0 dashboard-chrome long-form report: conclusion four-card row, 15-domain blue score table, issue cards, scoring explanation, source appendix, and print-friendly CSS. A four-card page with no narrative/account layer fails the standard unless the user explicitly asks for a brief.
    - Visually inspect the HTML in the browser after export; fix clipping, overlapping text, broken tables, missing glyphs, unreadable charts, and mobile overflow before final delivery.
    - When archiving is requested, archive final report, official filings, source index, validation log, and reproducibility script into the project output folder.
 
@@ -128,5 +128,6 @@ Use these book-derived lenses together:
 - Accounting policy, estimate, and presentation-change checks: `references/accounting-policy-change-protocol.md`
 - PDF export and visual QA: `references/pdf-export-standards.md`
 - HTML export and report layout: `references/html-export-standards.md`
+- HTML v1.0 visual contract: `references/html-v1.0-layout.md`
 - Report structure: `references/report-template.md`
 - Long-form report standard: `references/long-form-report-standard.md`

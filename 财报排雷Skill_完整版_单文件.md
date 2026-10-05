@@ -39,7 +39,7 @@ Output folder rule: write artifacts into a project-local or user-specified folde
 
 Ownership rule: add author/organization marks only if the user provides them. Otherwise use a neutral footer with report date, source basis, and the limitation statement.
 
-Long-form report-standard rule: the final HTML/Markdown must be a polished long-form report, not a short dashboard-only memo. Use `references/long-form-report-standard.md` and `references/html-export-standards.md` before writing and exporting. If a generated report is only a few scorecards, KPI cards, or brief issue bullets, it is incomplete for this workflow. Account-level decomposition is a middle evidence layer, not a replacement for global analysis: keep the full narrative spine, then drill down into accounts.
+Long-form report-standard rule: the final HTML/Markdown must be a polished long-form report, not a short dashboard-only memo. Use `references/long-form-report-standard.md`, `references/html-export-standards.md`, and `references/html-v1.0-layout.md` before writing and exporting. HTML chrome must match the v1.0 蓝白仪表盘 (`docs/preview-v1.0.png` and `docs/examples/北方导航_600435_财报排雷报告.html`): 核心结论四宫格、黄色风险摘要、15 维蓝表头评分卡. Do not use warm-paper / magazine / e-ink styling. If a generated report is only a few scorecards, KPI cards, or brief issue bullets, it is incomplete for this workflow. Account-level decomposition is a middle evidence layer, not a replacement for global analysis: keep the full narrative spine, then drill down into accounts.
 
 ## Core Principle
 
@@ -124,9 +124,9 @@ Use these book-derived lenses together:
 11. **Export final deliverables**
    - Produce a polished standalone HTML final report by default.
    - Preserve a Markdown source report and any structured data/validation notes next to the HTML.
-   - Use `references/html-export-standards.md` for native reader-facing layout; treat HTML as the primary report surface generated from the evidence pack and analysis structure, not as a decorative conversion from an existing Word/PDF report.
+   - Use `references/html-export-standards.md` and `references/html-v1.0-layout.md` for native reader-facing layout. Clone CSS from `docs/examples/北方导航_600435_财报排雷报告.html`. Treat HTML as the primary report surface generated from the evidence pack, not as a decorative conversion from Word/PDF, and not as a cream/serif magazine page.
    - Generate a PDF only when the user explicitly asks for a print/archive copy or when a downstream publication package requires it; use `references/pdf-export-standards.md` for that optional export.
-   - The HTML should normally be a formal long-form report with conclusion-first navigation, KPI cards, issue cards, scoring explanation, source appendix, and print-friendly CSS. A dashboard-only HTML output fails the standard unless the user explicitly asks for a brief.
+   - The HTML should normally be a v1.0 dashboard-chrome long-form report: conclusion four-card row, 15-domain blue score table, issue cards, scoring explanation, source appendix, and print-friendly CSS. A four-card page with no narrative/account layer fails the standard unless the user explicitly asks for a brief.
    - Visually inspect the HTML in the browser after export; fix clipping, overlapping text, broken tables, missing glyphs, unreadable charts, and mobile overflow before final delivery.
    - When archiving is requested, archive final report, official filings, source index, validation log, and reproducibility script into the project output folder.
 
@@ -154,6 +154,7 @@ Use these book-derived lenses together:
 - Accounting policy, estimate, and presentation-change checks: `references/accounting-policy-change-protocol.md`
 - PDF export and visual QA: `references/pdf-export-standards.md`
 - HTML export and report layout: `references/html-export-standards.md`
+- HTML v1.0 visual contract: `references/html-v1.0-layout.md`
 - Report structure: `references/report-template.md`
 - Long-form report standard: `references/long-form-report-standard.md`
 
@@ -1243,16 +1244,18 @@ Layout:
 - Avoid decorative visuals, oversized hero sections, gradients, emoji, or casual language.
 - Every chart must have title, unit, period, data source, and short interpretation.
 
-Visual system:
+Visual system (HTML must match v1.0 dashboard; see `references/html-v1.0-layout.md`):
 
-- Primary text: charcoal / near-black.
-- Background: white or very light neutral.
+- Primary text: `#1f2937`. Page background: `#f3f6fb`. Cards: white, 14px radius.
+- Section titles: navy with a 5px `#3d7ee8` left bar (`一、核心结论` / `二、15维度评分卡`).
+- Sans-serif only: PingFang SC / Microsoft YaHei. Do not use cream paper or display serif.
 - Accent colors:
-  - Green: strong/healthy.
-  - Amber: watchlist/moderate risk.
-  - Red: high risk.
-  - Blue-gray: neutral data and headers.
-- Use the same colors consistently across scorecards, red-flag tables, and charts.
+  - Green: strong / 0 硬闸门 / A.
+  - Blue: B / 结论建议 / table header `#3d7ee8`.
+  - Amber: C / watchlist.
+  - Orange: D.
+  - Red: E / P0-P1 / hard gates ≥1.
+- First HTML viewport: four cards (综合评分 / 评级含义 / 硬闸门触发 / 结论建议) then yellow 关键风险摘要, then the 15-domain table with A–E pills.
 - Use severity badges: P0 Critical, P1 High, P2 Medium, P3 Low.
 - Use rating badges: A/B/C/D/E.
 
@@ -1475,6 +1478,9 @@ Each issue card must distinguish:
 - Which conclusions are officially confirmed:
 - Recommended next step:
 
+
+# ========== 细则：references/long-form-report-standard.md ==========
+
 # ========== 细则：references/long-form-report-standard.md ==========
 
 # Long-Form 财报排雷 Report Standard
@@ -1560,16 +1566,16 @@ Every important issue must pass four tests:
 
 ## 4. Visual/HTML Standard
 
-The HTML should be a formal research-style long-form report, with a first viewport that clearly communicates score, rating, hard red-light state, highest-priority issues, and the core conclusion.
+The HTML must use the **v1.0 蓝白仪表盘** chrome in `references/html-v1.0-layout.md`, matching `docs/preview-v1.0.png`. After that chrome, keep a long-form research report (risk map, three-statement synthesis, account cards, appendix). Do not ship cream/serif magazine pages.
 
-Required front matter:
+Required front matter / first viewport:
 
-- Cover title and company code.
+- Cover title and company code in the top bar.
 - Author/organization when provided by the user.
 - Report status: `内部研究草稿`, `internal research draft`, or user-specified status.
-- Approximate word count and estimated reading time.
-- KPI cards for score, source basis, hard red lights, highest risk.
-- A concise executive callout.
+- Four cards: 综合评分, 评级含义, 硬闸门触发, 结论建议.
+- Yellow 关键风险摘要 banner.
+- 15-domain score table with blue header and A–E pills.
 
 Required visuals/tables:
 
@@ -1604,6 +1610,9 @@ Before final delivery, verify:
 
 If the first output is too short, regenerate instead of delivering it.
 
+
+# ========== 细则：references/html-export-standards.md ==========
+
 # ========== 细则：references/html-export-standards.md ==========
 
 # HTML Export Standards For 财报排雷
@@ -1637,69 +1646,54 @@ If an archive is requested, place HTML, Markdown, PDF if generated, source index
 
 ## 3. Required HTML Structure
 
+The first viewport must match the v1.0 dashboard in `docs/preview-v1.0.png` and `references/html-v1.0-layout.md`. Clone CSS from `docs/examples/北方导航_600435_财报排雷报告.html`.
+
 Use these sections in order:
 
-1. Hero / cover:
+1. Top bar + disclaimer:
    - company name and ticker;
-   - report status;
-   - score and rating;
-   - hard red-light state;
-   - one-sentence conclusion;
+   - report period / market;
    - visible disclaimer: `仅供学习研究，不构成投资建议。`
-2. KPI strip:
-   - financial-quality score;
-   - source basis;
-   - hard gates;
-   - highest priority risk;
-   - evidence state.
-3. Executive summary:
-   - 3-5 concise judgments.
-4. Reading logic / storyline:
-   - what feedback or analytical problem this report solves;
-   - why this is not a superficial Word-to-HTML conversion;
-   - how to read the report from global judgment to account evidence;
-   - boundary: filter and verification, not valuation or recommendation.
-5. Risk map:
+2. `一、核心结论` four-card row:
+   - 综合评分;
+   - 评级含义;
+   - 硬闸门触发;
+   - 结论建议（可继续研究 / 需重大折价审查 / 原则排除）.
+3. Yellow `关键风险摘要` banner under the four cards.
+4. `二、15维度评分卡`:
+   - columns: 维度 / 满分 / 得分 / 评级 / 核心问题;
+   - blue header; A–E grade pills.
+5. `三、风险地图`:
    - P0/P1/P2 matrix;
    - risk signal wording only, no unsupported fraud/legal accusation.
-6. Three-statement check:
-   - profit statement;
-   - balance sheet;
-   - cash-flow statement;
-   - explain what confirms and what contradicts.
-7. Account-level red-flag map:
-   - group accounts by balance sheet, income statement, and cash-flow statement;
-   - highlight cash, debt, receivables, inventory, goodwill/M&A, fixed assets/capex, other receivables/prepayments, profit-quality items, and operating cash-flow adjustments;
-   - each account should have amount/trend, risk question, current judgment, and next verification.
-8. Issue/account cards:
-   - one card per major issue;
-   - each card must contain trigger evidence, business explanation test, accounting explanation test, cash-flow test, asset-side trace, and follow-up verification.
-9. Scorecard:
-   - 15-domain scoring table or bar visualization.
-10. Follow-up checklist:
-   - next annual/interim report items to verify.
-11. Source and method appendix:
-   - official filings;
-   - structured data sources, if used;
-   - calculation formulas;
-   - unresolved data conflicts.
+6. `四、近五年主趋势与三表`:
+   - trend table;
+   - profit / balance sheet / cash-flow synthesis.
+7. `五、科目证据卡`:
+   - one card per major account/issue;
+   - trigger evidence, business/accounting/cash-flow tests, next verification.
+8. `六、硬闸门` table.
+9. `七、后续跟踪清单`.
+10. `八、触发句复现与来源` appendix.
+
+Keep long-form sections after the first viewport. A four-card dashboard with no account cards or appendix fails the standard unless the user asks for a brief.
 
 ## 4. Visual Direction
 
-Use this visual direction unless the user provides a brand system:
+Default visual system is **v1.0 蓝白仪表盘**, not magazine/e-ink. Unless the user provides another brand system:
 
-- electronic magazine x e-ink;
-- warm paper background;
-- dark ink text;
-- restrained red/amber/green risk colors;
-- serif display headings and sans-serif body;
-- monospace metadata;
-- visible but subtle footer with author/organization only when provided.
+- light blue-gray page `#f3f6fb`;
+- white rounded cards and light shadow;
+- navy section titles with a 5px `#3d7ee8` left bar;
+- sans-serif body: PingFang SC / Microsoft YaHei / Noto Sans SC;
+- blue table headers; A/B/C/D/E pills (green/blue/amber/orange/red);
+- restrained P0/P1/P2 tags;
+- footer with report date, source basis, and limitation statement; author mark only when provided.
 
 Avoid:
 
-- stock dashboard gradients;
-- finance influencer colors that imply recommendation;
+- warm paper, cream e-ink, serif magazine covers;
+- stock dashboard gradients and finance-influencer colors;
 - huge green/red price-action styling;
 - decorative visuals that hide source/evidence hierarchy.
 
@@ -1746,15 +1740,114 @@ Use consistent names:
 <公司名>_<证券代码>_财报排雷报告.pdf
 ```
 
-For social-content demos or style prototypes, use:
+Style prototype / canonical example:
 
 ```text
-财报排雷Skill_HTML报告模板DEMO.html
+docs/preview-v1.0.png
+docs/examples/北方导航_600435_财报排雷报告.html
+references/html-v1.0-layout.md
 ```
 
 ## 8. Demo And Templates
 
-If the user provides a demo HTML, brand template, or prior report, use it as a style reference only. Do not treat sample numbers as final company evidence.
+Treat `docs/preview-v1.0.png` and the 600435 example HTML as the **style** reference. Do not copy that company's scores or narrative into a new report. Clone the CSS and section chrome, then fill with the current company's evidence.
+
+
+# ========== 细则：references/html-v1.0-layout.md ==========
+
+# HTML v1.0 Layout Contract
+
+Canonical visual system for every 财报排雷 HTML report. Agents must follow this file and clone the live example, not invent a new look.
+
+## Canonical references
+
+| Artifact | Path | Role |
+|---|---|---|
+| Screenshot | `docs/preview-v1.0.png` | First-viewport look: 核心结论四宫格 + 黄条摘要 + 15 维蓝表头 |
+| Live example | `docs/examples/北方导航_600435_财报排雷报告.html` | Copy CSS, section titles, cards, table, badges |
+| Bundled clone | `references/html-v1.0-example.html` | Same file, for skill folders that do not ship `docs/` |
+| This spec | `references/html-v1.0-layout.md` | Tokens and required blocks |
+
+Do **not** use: warm paper, e-ink, electronic-magazine serif covers, dark ink-on-cream pages, Source Serif / Songti display headings, or stock-trading green/red dashboards.
+
+## First viewport (must match preview-v1.0.png)
+
+1. Slim top bar: company name · ticker · market · period.
+2. Disclaimer: `仅供学习研究，不构成投资建议。`
+3. `一、核心结论` with a 5px blue left bar on the title.
+4. Four equal white cards:
+   - 综合评分（大号分数 + 字母级 + 一句话质量含义）
+   - 评级含义（A–E 及解释）
+   - 硬闸门触发（项数；0 项用绿色，≥1 项用红色）
+   - 结论建议（可继续研究 / 需重大折价审查 / 原则排除）
+5. Yellow `关键风险摘要` banner under the four cards.
+6. `二、15维度评分卡`: table columns `维度 | 满分 | 得分 | 评级 | 核心问题`. Blue header row. Per-row letter grade pills.
+
+Then continue as long-form (not a one-page memo): 风险地图、趋势/三表、科目证据卡、硬闸门表、跟踪清单、来源附录.
+
+## Tokens
+
+```text
+background:    #f3f6fb
+card:          #ffffff
+ink:           #1f2937
+muted:         #6b7280
+line:          #e5eaf2
+blue header:   #3d7ee8
+navy title:    #1e3a5f
+alert bg:      #fff7e6
+alert text:    #92400e
+shadow:        0 8px 24px rgba(31, 58, 99, 0.06)
+radius:        14px cards, 12px alert
+font:          "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif
+max-width:     1180px
+```
+
+Grade pills (white text, 4px radius):
+
+| Grade | Background |
+|---|---|
+| A | `#22c55e` |
+| B | `#3b82f6` |
+| C | `#f59e0b` |
+| D | `#f97316` |
+| E | `#ef4444` |
+
+Map domain score / max:
+
+- ≥ 0.85 → A
+- ≥ 0.70 → B
+- ≥ 0.55 → C
+- ≥ 0.40 → D
+- else → E
+
+Risk tags: P0/P1 rose, P2 amber, 通过/未触发 green, 观察 indigo.
+
+## Required CSS skeleton
+
+Copy structure from the 600435 example. Minimum CSS:
+
+```css
+body { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif; background: #f3f6fb; color: #1f2937; }
+.section-title { display: flex; align-items: center; gap: 10px; color: #1e3a5f; font-size: 20px; font-weight: 700; }
+.section-title::before { content: ""; width: 5px; height: 22px; border-radius: 3px; background: #3d7ee8; }
+.cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.kpi { background: #fff; border-radius: 14px; box-shadow: 0 8px 24px rgba(31,58,99,.06); padding: 18px; }
+.score-table thead th { background: #3d7ee8; color: #fff; }
+.alert { background: #fff7e6; border: 1px solid #fde68a; border-radius: 12px; color: #92400e; }
+```
+
+On narrow screens, collapse `.cards-4` to 1–2 columns. Tables must scroll horizontally.
+
+## QA against the template
+
+Before delivery, open the HTML in a browser and confirm:
+
+- First screen looks like `docs/preview-v1.0.png` (blue bar titles, four cards, yellow banner, blue table header).
+- Not the cream/serif magazine layout.
+- Score, rating, hard-gate count, and conclusion in the four cards match the Markdown source.
+- Disclaimer at top and bottom.
+
 
 # ========== 细则：references/pdf-export-standards.md ==========
 

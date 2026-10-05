@@ -29,69 +29,54 @@ If an archive is requested, place HTML, Markdown, PDF if generated, source index
 
 ## 3. Required HTML Structure
 
+The first viewport must match the v1.0 dashboard in `docs/preview-v1.0.png` and `references/html-v1.0-layout.md`. Clone CSS from `docs/examples/北方导航_600435_财报排雷报告.html` or `references/html-v1.0-example.html`.
+
 Use these sections in order:
 
-1. Hero / cover:
+1. Top bar + disclaimer:
    - company name and ticker;
-   - report status;
-   - score and rating;
-   - hard red-light state;
-   - one-sentence conclusion;
+   - report period / market;
    - visible disclaimer: `仅供学习研究，不构成投资建议。`
-2. KPI strip:
-   - financial-quality score;
-   - source basis;
-   - hard gates;
-   - highest priority risk;
-   - evidence state.
-3. Executive summary:
-   - 3-5 concise judgments.
-4. Reading logic / storyline:
-   - what feedback or analytical problem this report solves;
-   - why this is not a superficial Word-to-HTML conversion;
-   - how to read the report from global judgment to account evidence;
-   - boundary: filter and verification, not valuation or recommendation.
-5. Risk map:
+2. `一、核心结论` four-card row:
+   - 综合评分;
+   - 评级含义;
+   - 硬闸门触发;
+   - 结论建议（可继续研究 / 需重大折价审查 / 原则排除）.
+3. Yellow `关键风险摘要` banner under the four cards.
+4. `二、15维度评分卡`:
+   - columns: 维度 / 满分 / 得分 / 评级 / 核心问题;
+   - blue header; A–E grade pills.
+5. `三、风险地图`:
    - P0/P1/P2 matrix;
    - risk signal wording only, no unsupported fraud/legal accusation.
-6. Three-statement check:
-   - profit statement;
-   - balance sheet;
-   - cash-flow statement;
-   - explain what confirms and what contradicts.
-7. Account-level red-flag map:
-   - group accounts by balance sheet, income statement, and cash-flow statement;
-   - highlight cash, debt, receivables, inventory, goodwill/M&A, fixed assets/capex, other receivables/prepayments, profit-quality items, and operating cash-flow adjustments;
-   - each account should have amount/trend, risk question, current judgment, and next verification.
-8. Issue/account cards:
-   - one card per major issue;
-   - each card must contain trigger evidence, business explanation test, accounting explanation test, cash-flow test, asset-side trace, and follow-up verification.
-9. Scorecard:
-   - 15-domain scoring table or bar visualization.
-10. Follow-up checklist:
-   - next annual/interim report items to verify.
-11. Source and method appendix:
-   - official filings;
-   - structured data sources, if used;
-   - calculation formulas;
-   - unresolved data conflicts.
+6. `四、近五年主趋势与三表`:
+   - trend table;
+   - profit / balance sheet / cash-flow synthesis.
+7. `五、科目证据卡`:
+   - one card per major account/issue;
+   - trigger evidence, business/accounting/cash-flow tests, next verification.
+8. `六、硬闸门` table.
+9. `七、后续跟踪清单`.
+10. `八、触发句复现与来源` appendix.
+
+Keep long-form sections after the first viewport. A four-card dashboard with no account cards or appendix fails the standard unless the user asks for a brief.
 
 ## 4. Visual Direction
 
-Use this visual direction unless the user provides a brand system:
+Default visual system is **v1.0 蓝白仪表盘**, not magazine/e-ink. Unless the user provides another brand system:
 
-- electronic magazine x e-ink;
-- warm paper background;
-- dark ink text;
-- restrained red/amber/green risk colors;
-- serif display headings and sans-serif body;
-- monospace metadata;
-- visible but subtle footer with author/organization only when provided.
+- light blue-gray page `#f3f6fb`;
+- white rounded cards and light shadow;
+- navy section titles with a 5px `#3d7ee8` left bar;
+- sans-serif body: PingFang SC / Microsoft YaHei / Noto Sans SC;
+- blue table headers; A/B/C/D/E pills (green/blue/amber/orange/red);
+- restrained P0/P1/P2 tags;
+- footer with report date, source basis, and limitation statement; author mark only when provided.
 
 Avoid:
 
-- stock dashboard gradients;
-- finance influencer colors that imply recommendation;
+- warm paper, cream e-ink, serif magazine covers;
+- stock dashboard gradients and finance-influencer colors;
 - huge green/red price-action styling;
 - decorative visuals that hide source/evidence hierarchy.
 
@@ -138,12 +123,14 @@ Use consistent names:
 <公司名>_<证券代码>_财报排雷报告.pdf
 ```
 
-For social-content demos or style prototypes, use:
+Style prototype / canonical example:
 
 ```text
-财报排雷Skill_HTML报告模板DEMO.html
+docs/preview-v1.0.png
+docs/examples/北方导航_600435_财报排雷报告.html
+references/html-v1.0-layout.md
 ```
 
 ## 8. Demo And Templates
 
-If the user provides a demo HTML, brand template, or prior report, use it as a style reference only. Do not treat sample numbers as final company evidence.
+Treat `docs/preview-v1.0.png` and the 600435 example HTML as the **style** reference. Do not copy that company's scores or narrative into a new report. Clone the CSS and section chrome, then fill with the current company's evidence.

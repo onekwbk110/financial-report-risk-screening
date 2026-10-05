@@ -11,7 +11,7 @@ High-value contributions:
 - market adapters (A-share / HK / US / A+H / ADR disclosure quirks)
 - industry-specific red-flag rules and counter-examples
 - issue-card playbooks
-- HTML template / CSS readability fixes
+- HTML template / CSS readability fixes that stay aligned with v1.0 dashboard (`docs/preview-v1.0.png`, `references/html-v1.0-layout.md`)
 - test prompts and reproducible sample outputs based on **public filings only**
 - validation helpers, source-index templates, scoring edge-case notes
 - docs typos, clearer trigger examples, bilingual wording fixes
@@ -35,7 +35,7 @@ If you contribute a sample report under `docs/examples/`:
 1. Use only public official disclosures (annual report, interim report, exchange announcements).
 2. Put the exact trigger prompt in `docs/examples/README.md` or the sample’s source index.
 3. Include a `source_index.md` with filing titles, dates, and public URLs.
-4. Keep HTML standalone and openable locally.
+4. Keep HTML standalone and openable locally. New sample HTML must clone the v1.0 蓝白仪表盘 chrome (four conclusion cards, yellow risk banner, blue 15-domain table), not cream/serif magazine styling.
 5. Keep the disclaimer visible near the top and bottom:
 
    `仅供学习研究，不构成投资建议。`

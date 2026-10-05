@@ -13,16 +13,18 @@ Layout:
 - Avoid decorative visuals, oversized hero sections, gradients, emoji, or casual language.
 - Every chart must have title, unit, period, data source, and short interpretation.
 
-Visual system:
+Visual system (HTML must match v1.0 dashboard; see `references/html-v1.0-layout.md`):
 
-- Primary text: charcoal / near-black.
-- Background: white or very light neutral.
+- Primary text: `#1f2937`. Page background: `#f3f6fb`. Cards: white, 14px radius.
+- Section titles: navy with a 5px `#3d7ee8` left bar (`一、核心结论` / `二、15维度评分卡`).
+- Sans-serif only: PingFang SC / Microsoft YaHei. Do not use cream paper or display serif.
 - Accent colors:
-  - Green: strong/healthy.
-  - Amber: watchlist/moderate risk.
-  - Red: high risk.
-  - Blue-gray: neutral data and headers.
-- Use the same colors consistently across scorecards, red-flag tables, and charts.
+  - Green: strong / 0 硬闸门 / A.
+  - Blue: B / 结论建议 / table header `#3d7ee8`.
+  - Amber: C / watchlist.
+  - Orange: D.
+  - Red: E / P0-P1 / hard gates ≥1.
+- First HTML viewport: four cards (综合评分 / 评级含义 / 硬闸门触发 / 结论建议) then yellow 关键风险摘要, then the 15-domain table with A–E pills.
 - Use severity badges: P0 Critical, P1 High, P2 Medium, P3 Low.
 - Use rating badges: A/B/C/D/E.
 
