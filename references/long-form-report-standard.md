@@ -86,7 +86,8 @@ The HTML should be a formal research-style long-form report, with a first viewpo
 Required front matter:
 
 - Cover title and company code.
-- Author/organization: default `kwbk`; override only if the user provides a different name.
+- Author/organization when provided by the user.
+- Report status: `内部研究草稿`, `internal research draft`, or user-specified status.
 - Approximate word count and estimated reading time.
 - KPI cards for score, source basis, hard red lights, highest risk.
 - A concise executive callout.
@@ -104,7 +105,7 @@ Required visuals/tables:
 
 Footer:
 
-- Add subtle visible author/organization mark; default `kwbk` unless the user overrides.
+- Add subtle visible author/organization mark only when provided.
 - Add report date/source basis and limitation statement.
 - Print styles should preserve the report hierarchy if the user later prints to PDF.
 

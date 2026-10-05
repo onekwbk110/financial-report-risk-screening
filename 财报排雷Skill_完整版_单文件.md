@@ -25,11 +25,11 @@
 # ========== 主流程：SKILL.md ==========
 
 ---
-name: financial-report-risk-screening
+name: annual-report-red-flag-auditor
 description: Use when analyzing a listed company's annual report for financial-report red flags, financial quality scoring, fraud/earnings-management risk, asset quality, profit quality, cash-flow quality, parent/consolidated report differences, related-party risks, or when producing a standardized 财报排雷 report.
 ---
 
-# Financial Report Risk Screening
+# Annual Report Red Flag Auditor
 
 This skill turns annual reports into a financial-quality scorecard and red-flag diagnosis. It is not an equity valuation skill. Use valuation only as optional context after report credibility and financial quality are established.
 
@@ -37,7 +37,7 @@ Default delivery mode: one-shot execution to a final polished HTML report. When 
 
 Output folder rule: write artifacts into a project-local or user-specified folder, normally `<output-root>/<company>_<ticker>/`, using subfolders `01_final_report`, `02_official_filings`, and `03_workpapers_validation` when an archive is requested. Do not assume a fixed local path.
 
-Ownership rule: default author/organization mark is `kwbk`. Override only if the user provides a different author/organization. Always keep report date, source basis, and the limitation statement in the footer.
+Ownership rule: add author/organization marks only if the user provides them. Otherwise use a neutral footer with report date, source basis, and the limitation statement.
 
 Long-form report-standard rule: the final HTML/Markdown must be a polished long-form report, not a short dashboard-only memo. Use `references/long-form-report-standard.md` and `references/html-export-standards.md` before writing and exporting. If a generated report is only a few scorecards, KPI cards, or brief issue bullets, it is incomplete for this workflow. Account-level decomposition is a middle evidence layer, not a replacement for global analysis: keep the full narrative spine, then drill down into accounts.
 
@@ -133,6 +133,7 @@ Use these book-derived lenses together:
 ## Output Rules
 
 - Always distinguish facts, calculations, interpretation, and open questions.
+- Mark reports as `内部研究草稿` or `internal research draft` unless the user explicitly asks for an external-ready version.
 - Prefer 5-10 year trend and peer comparison over one-year thresholds.
 - Do not interpret changes in margins, expense ratios, OCF, or asset ratios until accounting policy, estimate, and presentation changes have been checked.
 - A ratio is only a clue; require business, accounting, cash-flow, and asset-side explanation.
@@ -1014,9 +1015,9 @@ Red-team questions:
 
 ## 7. External-Use Control
 
-## 7. External-Use Control
+Unless the user explicitly asks for an external-ready report, mark the output as `内部研究草稿` or `internal research draft`.
 
-When the user asks for an external-ready or publishable report:
+For external-ready reports:
 
 - remove casual language
 - include source appendix
@@ -1026,7 +1027,6 @@ When the user asks for an external-ready or publishable report:
 - cite official filing dates and sections wherever possible
 - keep a validation log
 
-Do not add a default “内部研究草稿” / “internal research draft” status mark on reports.
 ## 8. Validation Log Format
 
 Use this table in the report:
@@ -1275,6 +1275,7 @@ Table standards:
 
 ## 1. Cover Page
 
+- Report status: 内部研究草稿 / 外部可分享版
 - Company:
 - Ticker:
 - Listing venue:
@@ -1564,7 +1565,8 @@ The HTML should be a formal research-style long-form report, with a first viewpo
 Required front matter:
 
 - Cover title and company code.
-- Author/organization: default `kwbk`; override only if the user provides a different name.
+- Author/organization when provided by the user.
+- Report status: `内部研究草稿`, `internal research draft`, or user-specified status.
 - Approximate word count and estimated reading time.
 - KPI cards for score, source basis, hard red lights, highest risk.
 - A concise executive callout.
@@ -1582,7 +1584,7 @@ Required visuals/tables:
 
 Footer:
 
-- Add subtle visible author/organization mark; default `kwbk` unless the user overrides.
+- Add subtle visible author/organization mark only when provided.
 - Add report date/source basis and limitation statement.
 - Print styles should preserve the report hierarchy if the user later prints to PDF.
 
@@ -1692,7 +1694,7 @@ Use this visual direction unless the user provides a brand system:
 - restrained red/amber/green risk colors;
 - serif display headings and sans-serif body;
 - monospace metadata;
-- visible but subtle footer with author/organization (default `kwbk`, or user override).
+- visible but subtle footer with author/organization only when provided.
 
 Avoid:
 
@@ -1815,7 +1817,7 @@ Use a formal investment-research style:
 - restrained colors
 - readable tables with light borders, alternating row fills, and risk-priority badges when applicable
 - page numbers
-- subtle author/organization mark (default `kwbk`, or user override)
+- subtle author/organization mark only when the user provides one
 - source notes
 - chart title, unit, period, source, and short interpretation
 

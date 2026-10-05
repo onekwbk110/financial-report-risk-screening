@@ -11,7 +11,7 @@ Default delivery mode: one-shot execution to a final polished HTML report. When 
 
 Output folder rule: write artifacts into a project-local or user-specified folder, normally `<output-root>/<company>_<ticker>/`, using subfolders `01_final_report`, `02_official_filings`, and `03_workpapers_validation` when an archive is requested. Do not assume a fixed local path.
 
-Ownership rule: default author/organization mark is `kwbk`. Override only if the user provides a different author/organization. Always keep report date, source basis, and the limitation statement in the footer.
+Ownership rule: add author/organization marks only if the user provides them. Otherwise use a neutral footer with report date, source basis, and the limitation statement.
 
 Long-form report-standard rule: the final HTML/Markdown must be a polished long-form report, not a short dashboard-only memo. Use `references/long-form-report-standard.md` and `references/html-export-standards.md` before writing and exporting. If a generated report is only a few scorecards, KPI cards, or brief issue bullets, it is incomplete for this workflow. Account-level decomposition is a middle evidence layer, not a replacement for global analysis: keep the full narrative spine, then drill down into accounts.
 
@@ -107,6 +107,7 @@ Use these book-derived lenses together:
 ## Output Rules
 
 - Always distinguish facts, calculations, interpretation, and open questions.
+- Mark reports as `内部研究草稿` or `internal research draft` unless the user explicitly asks for an external-ready version.
 - Prefer 5-10 year trend and peer comparison over one-year thresholds.
 - Do not interpret changes in margins, expense ratios, OCF, or asset ratios until accounting policy, estimate, and presentation changes have been checked.
 - A ratio is only a clue; require business, accounting, cash-flow, and asset-side explanation.

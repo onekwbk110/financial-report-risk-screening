@@ -86,7 +86,7 @@ Use this visual direction unless the user provides a brand system:
 - restrained red/amber/green risk colors;
 - serif display headings and sans-serif body;
 - monospace metadata;
-- visible but subtle footer with author/organization (default `kwbk`, or user override).
+- visible but subtle footer with author/organization only when provided.
 
 Avoid:
 

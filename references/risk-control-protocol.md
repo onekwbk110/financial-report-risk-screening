@@ -134,7 +134,9 @@ Red-team questions:
 
 ## 7. External-Use Control
 
-When the user asks for an external-ready or publishable report:
+Unless the user explicitly asks for an external-ready report, mark the output as `内部研究草稿` or `internal research draft`.
+
+For external-ready reports:
 
 - remove casual language
 - include source appendix
@@ -144,7 +146,6 @@ When the user asks for an external-ready or publishable report:
 - cite official filing dates and sections wherever possible
 - keep a validation log
 
-Do not add a default “内部研究草稿” / “internal research draft” status mark on reports.
 ## 8. Validation Log Format
 
 Use this table in the report:

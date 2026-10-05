@@ -57,7 +57,7 @@ Use a formal investment-research style:
 - restrained colors
 - readable tables with light borders, alternating row fills, and risk-priority badges when applicable
 - page numbers
-- subtle author/organization mark (default `kwbk`, or user override)
+- subtle author/organization mark only when the user provides one
 - source notes
 - chart title, unit, period, source, and short interpretation
 

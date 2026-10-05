@@ -19,8 +19,11 @@ Example HTML report output: overall score, hard-gate alerts, and the 15-domain s
 
 示例输出：综合评分、硬闸门提示与 15 维评分卡。
 
-![Report preview](docs/preview-v1.0.png)
+完整可打开示例（北方导航 600435，仅基于公开年报）：
 
+- [HTML 报告](docs/examples/北方导航_600435_财报排雷报告.html)
+- [Markdown 源稿](docs/examples/北方导航_600435_财报排雷报告.md)
+- [来源索引与触发句](docs/examples/README.md)
 
 ## Table Of Contents
 
@@ -110,12 +113,6 @@ If your runtime uses another skills path, clone it there instead:
 
 ```bash
 git clone https://github.com/onekwbk110/financial-report-risk-screening.git /path/to/your/skills/financial-report-risk-screening
-```
-
-Cursor example:
-
-```bash
-git clone https://github.com/onekwbk110/financial-report-risk-screening.git ~/.cursor/skills/financial-report-risk-screening
 ```
 
 The important requirement is that the skill folder itself contains `SKILL.md` at the root:
@@ -422,6 +419,8 @@ financial-report-risk-screening/
   SKILL.md
   LICENSE
   README.md
+  CONTRIBUTING.md
+  docs/examples/
   references/
     accounting-policy-change-protocol.md
     deterministic-red-flag-rules.md
@@ -440,6 +439,7 @@ financial-report-risk-screening/
 | File | Purpose |
 |---|---|
 | `SKILL.md` | Main trigger, workflow, output rules, and reference navigation |
+| `docs/examples/` | Public reproducible sample reports and trigger prompts |
 | `references/scoring-system.md` | 15-domain, 100-point scoring model and hard gates |
 | `references/deterministic-red-flag-rules.md` | Mechanical screening rules for fast initial detection |
 | `references/red-flag-playbook.md` | P0/P1/P2 issue-card structure and investigation playbooks |
@@ -529,7 +529,7 @@ For external publication, use stricter source citations, calculation notes, limi
 You can customize the workflow without changing the core skill:
 
 - Provide an output folder in the user prompt.
-- Override the default report author `kwbk` with another author or organization name if needed.
+- Provide an author or organization name for the report footer.
 - Ask for English or Chinese output.
 - Ask for HTML only, or HTML plus PDF.
 - Provide a brand template or previous report as a style reference.
@@ -584,17 +584,19 @@ If public data cannot resolve a question, the report should say so explicitly.
 
 ## Contributing
 
+Please read [CONTRIBUTING.md](CONTRIBUTING.md). Small Issues/PRs are welcome, including typos and one-rule clarifications.
+
 Useful contributions include:
 
 - new market adapters
 - industry-specific red-flag rules
 - additional issue-card playbooks
 - improved HTML templates
-- test prompts and sample outputs
+- test prompts and sample outputs based on public filings
 - validation scripts
 - filing-source retrieval helpers
 
-When contributing, avoid adding private filings, credentials, or proprietary data. Keep examples anonymized or based on public official disclosures.
+When contributing, avoid adding private filings, credentials, or proprietary data. Keep examples based on public official disclosures and link filings instead of uploading large PDFs.
 
 ## License
 

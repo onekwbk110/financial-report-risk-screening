@@ -45,6 +45,7 @@ Table standards:
 
 ## 1. Cover Page
 
+- Report status: 内部研究草稿 / 外部可分享版
 - Company:
 - Ticker:
 - Listing venue:
