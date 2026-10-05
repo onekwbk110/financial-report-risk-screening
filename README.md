@@ -19,6 +19,8 @@ Example HTML report output: overall score, hard-gate alerts, and the 15-domain s
 
 示例输出：综合评分、硬闸门提示与 15 维评分卡。
 
+![Report preview](docs/preview-v1.0.png)
+
 完整可打开示例（北方导航 600435，仅基于公开年报）：
 
 - [HTML 报告](docs/examples/北方导航_600435_财报排雷报告.html)
